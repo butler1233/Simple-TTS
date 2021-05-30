@@ -19,7 +19,7 @@ namespace Simple_TTS.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -64,7 +64,7 @@ namespace Simple_TTS.Properties {
         ///   Looks up a localized string similar to {0} ({1})
         ///
         ///{2}
-        ///Icons are made by Google from Flaticon and are licensed under CC BY 3.0
+        ///Icons are made by Google (design.google.com/icons)
         ///
         ///{3}.
         /// </summary>
@@ -142,7 +142,7 @@ namespace Simple_TTS.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Hello {0}.
-        ///Welcome to Simple Text to Speech Reader version {1}.
+        ///Welcome to Simple Text to Speech version {1}.
         ///
         ///To start, stop, or pause voice playback, use the buttons above.
         ///You can find settings, help, etc in the toolbar menu at the top of the window.

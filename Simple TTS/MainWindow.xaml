@@ -84,6 +84,9 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="5" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.Resources>
                 <Style TargetType="{x:Type Button}">
@@ -99,7 +102,7 @@
                 </Style>
             </Grid.Resources>
             <Button x:Name="btnStart" Click="btnStart_Click" Grid.Column="0"
-                    IsEnabled="{Binding Text.Length, ElementName=txtDocument}">
+                    IsEnabled="{Binding Text.Length, ElementName=txtDocument}" Grid.ColumnSpan="2">
                 <DockPanel>
                     <Image DockPanel.Dock="Left" Stretch="None">
                         <Image.Style>
@@ -138,12 +141,14 @@
                 </DockPanel>
             </Button>
             <Button Click="btnStop_Click" Grid.Column="2"
-                    IsEnabled="{Binding SynthesizerState, Converter={StaticResource SynthesizerStateIsNotReadyToBoolConverter}}">
+                    IsEnabled="{Binding SynthesizerState, Converter={StaticResource SynthesizerStateIsNotReadyToBoolConverter}}" Grid.ColumnSpan="2" Margin="1,0,0,0">
                 <DockPanel>
                     <Image DockPanel.Dock="Left" Stretch="None" Source="Resources/stop.png" />
                     <TextBlock DockPanel.Dock="Right" Text="Stop" HorizontalAlignment="Center" />
                 </DockPanel>
             </Button>
+            <TextBox Grid.Column="4" x:Name="filenamebox"/>
+            <Button Grid.Column="5" x:Name="savebutton" Click="Savebutton_OnClick">Save</Button>
         </Grid>
         <TextBox Grid.Row="2" x:Name="txtDocument" AcceptsReturn="True" TextWrapping="Wrap" Grid.Column="0"
                  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"

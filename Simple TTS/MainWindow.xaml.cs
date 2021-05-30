@@ -270,5 +270,25 @@ namespace Simple_TTS
             _synthesizer.StateChanged += (sender, args) => SynthesizerState = args.State;
             _synthesizer.SpeakProgress += Synthesizer_OnSpeakProgress;
         }
+
+        private void Savebutton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var filename = $"{filenamebox.Text}_{_synthesizer.Voice.Name}.wav";
+            try
+            {
+                _synthesizer.Resume();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
+            _synthesizer.Speak("");
+            _synthesizer.SetOutputToWaveFile(filename);
+            
+            _synthesizer.Speak(txtDocument.Text);
+            _synthesizer.SetOutputToDefaultAudioDevice();
+            MessageBox.Show($"Saved file {filename}");
+        }
     }
 }
